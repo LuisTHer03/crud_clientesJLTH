@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- Version con la cual trabajan los navegadores -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- anchura del dispositivo y zoom por default -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planificacion de bodas colaborativa</title>
+    <!-- Enlace a hoja de estilos CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'boda/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'boda/css/boxicons.min.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Bo<span>das</span></a>
+        <ul class="navbar">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#info">Información</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#Contacts">Contactos</a></li>
+        </ul>
+        <div class="h-derecha">
+            <a href="#">Siguenos</a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <div class="bx bx-menu" id="menu_icon"></div>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <h5 id="typed">Disfruta</h5>
+            <h1>Planifica Tu Boda <br> de Ensueño, Juntos</h1>
+            <p>Colabora con tus seres queridos para crear la bosa perfecta. Organiza, comparte ideas y toma
+                <br> decisiones en equipo
+            </p>
+            <a href="#" id="btn-planificacion" class="btn">Comienza Tu Planificación</a>
+        </div>
+    </section>
+
+    <!-- PRACTICA 1 DE LA UNIDAD 2 -->
+    <section class="columnas" id="info">
+        <h5>Inspiración para Tu Boda</h5>
+        <div data-aos="zoom-in-up" class="col_content">
+            <div class="row">
+                <div class="row-img">
+                    <img src="{% static 'boda/img/momentosmagicos.jpg' %}" alt="Img Momentos magicos">
+                </div>
+                <h4>Momentos Mágicos</h4>
+            </div>
+            <div class="row">
+                <div class="row-img">
+                    <img src="{% static 'boda/img/decoracionelegante.jpeg' %}" alt="IMG Decoración Elegante">
+                </div>
+                <h4>Decoración Elegante</h4>
+            </div>
+            <div class="row">
+                <div class="row-img">
+                    <img src="{% static 'boda/img/pastelensueño.jpg' %}" alt="IMG Pasteles de Ensueño">
+                </div>
+                <h4>Pasteles de Ensueño</h4>
+            </div>
+        </div>
+    </section>
+    <section class="columnas2">
+        <div data-aos="fade-up-right" class=col_content2>
+            <div class="row2">
+                <div class="row-img2">
+                    <img src="{% static 'boda/img/boda2.png' %}" alt="Imagen Boda">
+                </div>
+            </div>
+            <div class="row2">
+                <div class="home-text2">
+                    <h5>OFERTA DEL MES</h5>
+                    <h1>Llama ya!!</h1>
+                    <p>Si haces tu reserva el dia de hoy, <br> tendras el 50% de descuento</p>
+                    <a href="#" id="btn-promocion" class="btn">Lo quiero</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<footer data-aos="fade-down">
+    <div class="footer-content" id="Contacts">
+        <h3>Planificación de Bodas Colaborativa</h3>
+        <p>Organiza la boda de tus sueños junto a tus seres queridos. ¡Hazlo especial, hazlo juntos!</p>
+        <ul class="socials">
+            <li><a href="#"><i class='bx bxl-facebook-circle'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram-alt'></i></a></li>
+            <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Planificación de Bodas Colaborativa | Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="{% static 'boda/js/script.js' %}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>
