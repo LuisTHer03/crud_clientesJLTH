@@ -8,8 +8,6 @@ from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter, landscape
 import datetime
-import os
-os.chdir("C:/Users/josel/OneDrive/Documentos/ISC/Planificacion_de_bodas/Proyectos/crud_clientesjlth/clientes/static/clientes/iconos")
 from django.db.models import Q
 
 # Create your views here.
@@ -30,12 +28,13 @@ def create_clientes(request):
 def cliente_list(request):
     query = request.GET.get("q")
     if query:
-        clientes=Cliente.objects.filter(
-            Q(nombre__icontains=query) | Q(apellidos__icontains = query)
+        clientes = Cliente.objects.filter(
+            Q(nombre__icontains=query) | Q(apellidos__icontains=query)
         )
     else:
         clientes = Cliente.objects.all()
     return render(request, 'clientes/clientes_list.html', {'clientes': clientes})
+
 
 @login_required
 def update_cliente(request, pk):
@@ -80,8 +79,8 @@ def generar_pdf_cliente(request):
 
     # Agregar imagen al pdf (icono)
     # Ruta de la imagen
-    ruta_imagen = "clients.png"
-    ruta_imagen2 = "anillos.png"
+    ruta_imagen = "C:/Users/josel/OneDrive/Documentos/ISC/Planificacion_de_bodas/Proyectos/crud_clientesjlth/clientes/static/clientes/iconos/clients.png"
+    ruta_imagen2 = "C:/Users/josel/OneDrive/Documentos/ISC/Planificacion_de_bodas/Proyectos/crud_clientesjlth/clientes/static/clientes/iconos/anillos.png"
 
     # Posicion de la imagen
     pdf.drawImage(ruta_imagen, 235, height - 50, 35, 35)
@@ -110,7 +109,7 @@ def generar_pdf_cliente(request):
     query = request.GET.get("q")
     if query:
         clientes = Cliente.objects.filter(
-            Q(nombre__icontains = query) | Q(apellidos__icontains = query)
+            Q(nombre__icontains=query) | Q(apellidos__icontains=query)
         )
     else:
         clientes = Cliente.objects.all()
