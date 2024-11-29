@@ -2,5 +2,5 @@ dj_database_url==2.3.0
 Django==5.1.2
 reportlab==4.2.5
 gunicorn
-pyscopg2-binary==2.9.10
+psycopg2-binary==2.9.10
 pillow==11.0.0
