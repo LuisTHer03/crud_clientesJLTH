@@ -28,6 +28,25 @@ SECRET_KEY = 'django-insecure-b)$$8l!i8ebcc@lv#q14ukn^dw&$961#3cfu3fmw4m04+@0-om
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+# Configura logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+    'django': {
+        'handlers': ['console'],
+        'level': 'ERROR',  # Cambiar a DEBUG si quieres más detalles
+        'propagate': False,
+    },
+}
 
 
 # Application definition
