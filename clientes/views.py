@@ -9,6 +9,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter, landscape
 import datetime
 from django.db.models import Q
+from django.contrib.staticfiles import finders
 
 # Create your views here.
 
@@ -79,8 +80,10 @@ def generar_pdf_cliente(request):
 
     # Agregar imagen al pdf (icono)
     # Ruta de la imagen
-    ruta_imagen = "C:/Users/josel/OneDrive/Documentos/ISC/Planificacion_de_bodas/Proyectos/crud_clientesjlth/clientes/static/clientes/iconos/clients.png"
-    ruta_imagen2 = "C:/Users/josel/OneDrive/Documentos/ISC/Planificacion_de_bodas/Proyectos/crud_clientesjlth/clientes/static/clientes/iconos/anillos.png"
+    ruta_imagen = finders.find('clientes/iconos/clients.png')
+    ruta_imagen2 = finders.find('clientes/iconos/anillos.png')
+    if not ruta_imagen or not ruta_imagen2:
+        raise FileNotFoundError("Las imágenes no se encontraron en los archivos estáticos")
 
     # Posicion de la imagen
     pdf.drawImage(ruta_imagen, 235, height - 50, 35, 35)
